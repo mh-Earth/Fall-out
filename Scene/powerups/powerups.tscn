@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://xdhhf26extri"]
+
+[ext_resource type="Script" path="res://Scripts/powerups.gd" id="1_3f0yo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f134e"]
+size = Vector2(12, 12)
+
+[sub_resource type="Gradient" id="Gradient_63qxd"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dr7eb"]
+gradient = SubResource("Gradient_63qxd")
+width = 20
+
+[node name="powerups" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_3f0yo")
+powertype = "speedup"
+rotation_speed = 500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f134e")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 12)
+texture = SubResource("GradientTexture1D_dr7eb")
+metadata/_edit_lock_ = true
+
+[node name="power_timeout" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 10)
+collision_mask = 26
+
+[connection signal="timeout" from="power_timeout" to="." method="_on_power_timeout_timeout"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://clal4scduv10y"]
+
+[ext_resource type="PackedScene" uid="uid://fhpjvv3q2p6s" path="res://Scene/Level.tscn" id="1_2i7s3"]
+[ext_resource type="PackedScene" uid="uid://csxo4te8uaxjl" path="res://Scene/springer.tscn" id="2_1ivk0"]
+
+[node name="Level" instance=ExtResource("1_2i7s3")]
+
+[node name="player" parent="." index="1"]
+position = Vector2(155, 81)
+
+[node name="Camera2D" parent="player" index="7"]
+position = Vector2(0, 0)
+
+[node name="springer" parent="." index="10" instance=ExtResource("2_1ivk0")]
+position = Vector2(223, 63)
+
+[node name="DampedSpringJoint2D" parent="springer" index="0"]
+node_b = NodePath("../../player")
+bias = 0.41
+stiffness = 0.4
+
+[editable path="springer"]

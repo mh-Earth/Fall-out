@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq8ite1tkdmrh"]
+
+[ext_resource type="PackedScene" uid="uid://fhpjvv3q2p6s" path="res://Scene/Level.tscn" id="1_ov3ov"]
+[ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="2_7gobt"]
+[ext_resource type="PackedScene" uid="uid://bkdyj32ktq7uk" path="res://Scene/end_block.tscn" id="3_n0eoo"]
+[ext_resource type="PackedScene" uid="uid://dwiu3nna20mxo" path="res://Scene/guidance_label.tscn" id="4_flse7"]
+
+[node name="Level" instance=ExtResource("1_ov3ov")]
+next_scene = "res://Scene/Levels/level2.tscn"
+
+[node name="player" parent="." index="1"]
+position = Vector2(88, 72)
+
+[node name="Gound_block" parent="FallAbleBlocks" index="0" instance=ExtResource("2_7gobt")]
+position = Vector2(6, 12)
+
+[node name="Gound_block2" parent="FallAbleBlocks" index="1" instance=ExtResource("2_7gobt")]
+position = Vector2(22, 12)
+
+[node name="Gound_block3" parent="FallAbleBlocks" index="2" instance=ExtResource("2_7gobt")]
+position = Vector2(38, 12)
+
+[node name="Gound_block4" parent="FallAbleBlocks" index="3" instance=ExtResource("2_7gobt")]
+position = Vector2(54, 12)
+
+[node name="Gound_block5" parent="FallAbleBlocks" index="4" instance=ExtResource("2_7gobt")]
+position = Vector2(70, 12)
+
+[node name="Gound_block6" parent="FallAbleBlocks" index="5" instance=ExtResource("2_7gobt")]
+position = Vector2(86, 12)
+
+[node name="Gound_block7" parent="FallAbleBlocks" index="6" instance=ExtResource("2_7gobt")]
+position = Vector2(102, 12)
+
+[node name="Gound_block8" parent="FallAbleBlocks" index="7" instance=ExtResource("2_7gobt")]
+position = Vector2(118, 12)
+
+[node name="Gound_block9" parent="FallAbleBlocks" index="8" instance=ExtResource("2_7gobt")]
+position = Vector2(134, 12)
+
+[node name="Gound_block10" parent="FallAbleBlocks" index="9" instance=ExtResource("2_7gobt")]
+position = Vector2(150, 12)
+
+[node name="Gound_block11" parent="FallAbleBlocks" index="10" instance=ExtResource("2_7gobt")]
+position = Vector2(166, 12)
+
+[node name="Gound_block12" parent="FallAbleBlocks" index="11" instance=ExtResource("2_7gobt")]
+position = Vector2(182, 12)
+
+[node name="Gound_block13" parent="FallAbleBlocks" index="12" instance=ExtResource("2_7gobt")]
+position = Vector2(198, 12)
+
+[node name="Gound_block14" parent="FallAbleBlocks" index="13" instance=ExtResource("2_7gobt")]
+position = Vector2(214, 12)
+
+[node name="Gound_block15" parent="FallAbleBlocks" index="14" instance=ExtResource("2_7gobt")]
+position = Vector2(230, 12)
+
+[node name="Gound_block16" parent="FallAbleBlocks" index="15" instance=ExtResource("2_7gobt")]
+position = Vector2(246, 12)
+
+[node name="Gound_block17" parent="FallAbleBlocks" index="16" instance=ExtResource("2_7gobt")]
+position = Vector2(293, 12)
+
+[node name="Gound_block18" parent="FallAbleBlocks" index="17" instance=ExtResource("2_7gobt")]
+position = Vector2(344, 12)
+
+[node name="Gound_block19" parent="FallAbleBlocks" index="18" instance=ExtResource("2_7gobt")]
+position = Vector2(360, 12)
+
+[node name="Gound_block20" parent="FallAbleBlocks" index="19" instance=ExtResource("2_7gobt")]
+position = Vector2(376, 12)
+
+[node name="Gound_block21" parent="FallAbleBlocks" index="20" instance=ExtResource("2_7gobt")]
+position = Vector2(392, 12)
+
+[node name="Gound_block23" parent="FallAbleBlocks" index="21" instance=ExtResource("2_7gobt")]
+position = Vector2(408, 12)
+
+[node name="Gound_block24" parent="FallAbleBlocks" index="22" instance=ExtResource("2_7gobt")]
+position = Vector2(424, 12)
+
+[node name="Gound_block25" parent="FallAbleBlocks" index="23" instance=ExtResource("2_7gobt")]
+position = Vector2(440, 12)
+
+[node name="Gound_block26" parent="FallAbleBlocks" index="24" instance=ExtResource("2_7gobt")]
+position = Vector2(456, 12)
+
+[node name="kill zone" parent="." index="4"]
+position = Vector2(-453, 202)
+
+[node name="guidanceLabel" parent="dialogues" index="0" instance=ExtResource("4_flse7")]
+offset_left = -96.0
+offset_top = 42.0
+offset_right = 44.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 20
+text = "The world is falling
+Run for  your life!!"
+
+[node name="CollisionShape2D" parent="dialogues/guidanceLabel/Area2D" index="0"]
+position = Vector2(378, 45)
+
+[node name="end_block" parent="." index="10" instance=ExtResource("3_n0eoo")]
+position = Vector2(544, 112)
+
+[editable path="dialogues/guidanceLabel"]

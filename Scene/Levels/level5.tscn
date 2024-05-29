@@ -1,0 +1,111 @@
+[gd_scene load_steps=4 format=3 uid="uid://cej04eqd8xyat"]
+
+[ext_resource type="PackedScene" uid="uid://pux7rqo0spfj" path="res://Scene/Levels/level0.tscn" id="1_cyex0"]
+[ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="2_c6csv"]
+[ext_resource type="PackedScene" uid="uid://xdhhf26extri" path="res://Scene/powerups/powerups.tscn" id="3_3l5de"]
+
+[node name="Level" instance=ExtResource("1_cyex0")]
+next_scene = "res://Scene/Levels/level6.tscn"
+
+[node name="Gound_block86" parent="FallAbleBlocks" index="42" instance=ExtResource("2_c6csv")]
+position = Vector2(675, 26)
+
+[node name="Gound_block83" parent="FallAbleBlocks" index="43" instance=ExtResource("2_c6csv")]
+position = Vector2(691, 26)
+
+[node name="Gound_block84" parent="FallAbleBlocks" index="44" instance=ExtResource("2_c6csv")]
+position = Vector2(707, 26)
+
+[node name="Gound_block85" parent="FallAbleBlocks" index="45" instance=ExtResource("2_c6csv")]
+position = Vector2(723, 26)
+
+[node name="Gound_block78" parent="FallAbleBlocks" index="46" instance=ExtResource("2_c6csv")]
+position = Vector2(739, 26)
+
+[node name="Gound_block79" parent="FallAbleBlocks" index="47" instance=ExtResource("2_c6csv")]
+position = Vector2(755, 26)
+
+[node name="Gound_block80" parent="FallAbleBlocks" index="48" instance=ExtResource("2_c6csv")]
+position = Vector2(771, 26)
+
+[node name="Gound_block81" parent="FallAbleBlocks" index="49" instance=ExtResource("2_c6csv")]
+position = Vector2(787, 26)
+
+[node name="Gound_block82" parent="FallAbleBlocks" index="50" instance=ExtResource("2_c6csv")]
+position = Vector2(803, 26)
+
+[node name="Gound_block65" parent="FallAbleBlocks" index="51" instance=ExtResource("2_c6csv")]
+position = Vector2(819, 26)
+
+[node name="Gound_block66" parent="FallAbleBlocks" index="52" instance=ExtResource("2_c6csv")]
+position = Vector2(835, 26)
+
+[node name="Gound_block67" parent="FallAbleBlocks" index="53" instance=ExtResource("2_c6csv")]
+position = Vector2(851, 26)
+
+[node name="Gound_block68" parent="FallAbleBlocks" index="54" instance=ExtResource("2_c6csv")]
+position = Vector2(867, 26)
+
+[node name="Gound_block69" parent="FallAbleBlocks" index="55" instance=ExtResource("2_c6csv")]
+position = Vector2(883, 26)
+
+[node name="Gound_block70" parent="FallAbleBlocks" index="56" instance=ExtResource("2_c6csv")]
+position = Vector2(899, 26)
+
+[node name="Gound_block71" parent="FallAbleBlocks" index="57" instance=ExtResource("2_c6csv")]
+position = Vector2(915, 26)
+
+[node name="Gound_block72" parent="FallAbleBlocks" index="58" instance=ExtResource("2_c6csv")]
+position = Vector2(931, 26)
+
+[node name="Gound_block73" parent="FallAbleBlocks" index="59" instance=ExtResource("2_c6csv")]
+position = Vector2(947, 26)
+
+[node name="Gound_block74" parent="FallAbleBlocks" index="60" instance=ExtResource("2_c6csv")]
+position = Vector2(963, 26)
+
+[node name="Gound_block75" parent="FallAbleBlocks" index="61" instance=ExtResource("2_c6csv")]
+position = Vector2(979, 26)
+
+[node name="Gound_block76" parent="FallAbleBlocks" index="62" instance=ExtResource("2_c6csv")]
+position = Vector2(995, 26)
+
+[node name="Gound_block77" parent="FallAbleBlocks" index="63" instance=ExtResource("2_c6csv")]
+position = Vector2(1011, 26)
+
+[node name="Gound_block63" parent="FallAbleBlocks" index="64"]
+position = Vector2(1027, 26)
+
+[node name="Gound_block64" parent="FallAbleBlocks" index="65"]
+position = Vector2(1043, 26)
+
+[node name="end_block" parent="." index="10"]
+position = Vector2(1131, 126)
+
+[node name="powerups" parent="." index="11" instance=ExtResource("3_3l5de")]
+position = Vector2(370, 109)
+
+[node name="powerups2" parent="." index="12" instance=ExtResource("3_3l5de")]
+position = Vector2(410, 109)
+
+[node name="powerups3" parent="." index="13" instance=ExtResource("3_3l5de")]
+position = Vector2(450, 109)
+
+[node name="powerups4" parent="." index="14" instance=ExtResource("3_3l5de")]
+position = Vector2(490, 109)
+
+[node name="powerups5" parent="." index="15" instance=ExtResource("3_3l5de")]
+position = Vector2(530, 109)
+
+[node name="powerups6" parent="." index="16" instance=ExtResource("3_3l5de")]
+position = Vector2(570, 109)
+
+[node name="powerups7" parent="." index="17" instance=ExtResource("3_3l5de")]
+position = Vector2(610, 109)
+
+[node name="powerups8" parent="." index="18" instance=ExtResource("3_3l5de")]
+position = Vector2(650, 109)
+
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_t_imer_timeout"]
+
+[editable path="dialogues/guidanceLabel"]

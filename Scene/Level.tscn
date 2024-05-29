@@ -1,0 +1,198 @@
+[gd_scene load_steps=17 format=3 uid="uid://fhpjvv3q2p6s"]
+
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="1_a3ukw"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_pc8at"]
+[ext_resource type="PackedScene" uid="uid://bgi4hhd7fh1n7" path="res://Scene/player.tscn" id="1_r6roj"]
+[ext_resource type="Script" path="res://Scripts/kill zone.gd" id="3_pf8g6"]
+[ext_resource type="Script" path="res://Scripts/level_transions.gd" id="7_q5osr"]
+
+[sub_resource type="Gradient" id="Gradient_3lb4g"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_77seu"]
+gradient = SubResource("Gradient_3lb4g")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b4oe3"]
+normal = Vector2(-0.0256326, -0.999671)
+distance = -84.0
+
+[sub_resource type="Gradient" id="Gradient_lwbaf"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3sinh"]
+gradient = SubResource("Gradient_lwbaf")
+
+[sub_resource type="Gradient" id="Gradient_upk71"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wcnwn"]
+gradient = SubResource("Gradient_upk71")
+
+[sub_resource type="Animation" id="Animation_cg1il"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c4eje"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f87qg"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_irr57"]
+_data = {
+"RESET": SubResource("Animation_cg1il"),
+"fade in": SubResource("Animation_c4eje"),
+"fade out": SubResource("Animation_f87qg")
+}
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_pc8at")
+
+[node name="bg" type="Sprite2D" parent="."]
+modulate = Color(0.56963, 0.561646, 0.81278, 1)
+position = Vector2(1112.06, 25.9998)
+scale = Vector2(18.8276, 2950)
+texture = SubResource("GradientTexture1D_77seu")
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." instance=ExtResource("1_r6roj")]
+unique_name_in_owner = true
+position = Vector2(77, 68)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+unique_name_in_owner = true
+position = Vector2(26, -38)
+scale = Vector2(0.018, 1)
+zoom = Vector2(2, 2)
+limit_bottom = 400
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+drag_vertical_enabled = true
+drag_top_margin = 0.5
+drag_right_margin = 0.04
+drag_bottom_margin = 0.3
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("1_a3ukw")
+
+[node name="FallAbleBlocks" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(72, 100)
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(238, -262)
+rotation = -0.82434
+color = Color(1, 1, 1, 0.635294)
+energy = 0.41
+shadow_enabled = true
+height = 0.39
+max_distance = 9840.0
+
+[node name="kill zone" type="Area2D" parent="."]
+position = Vector2(65, 139)
+collision_layer = 32
+collision_mask = 7
+script = ExtResource("3_pf8g6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill zone"]
+shape = SubResource("WorldBoundaryShape2D_b4oe3")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+texture_filter = 1
+color = Color(0.93408, 0.93408, 0.93408, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 266.0
+offset_bottom = 11.0
+scale = Vector2(1, 10)
+max_value = 15.0
+value = 5.0
+texture_under = SubResource("GradientTexture1D_3sinh")
+texture_progress = SubResource("GradientTexture1D_wcnwn")
+
+[node name="progress_value" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 273.0
+offset_top = 8.0
+offset_right = 313.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 10
+text = "15"
+
+[node name="player_speed" type="Label" parent="UI"]
+offset_left = 7.0
+offset_top = 31.0
+offset_right = 106.0
+offset_bottom = 54.0
+text = "player speed : 00"
+
+[node name="GameOverTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Transtions layer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 10
+visible = false
+script = ExtResource("7_q5osr")
+
+[node name="ColorRect" type="ColorRect" parent="Transtions layer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transtions layer"]
+libraries = {
+"": SubResource("AnimationLibrary_irr57")
+}
+speed_scale = 1.829
+
+[node name="dialogues" type="Node2D" parent="."]
+
+[connection signal="playerMoved" from="player" to="." method="_on_player_player_moved"]
+[connection signal="body_entered" from="kill zone" to="kill zone" method="_on_body_entered"]
+[connection signal="gameover" from="kill zone" to="." method="_on_kill_zone_gameover"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

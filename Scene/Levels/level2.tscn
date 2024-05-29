@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckeq5vfc01e4a"]
+
+[ext_resource type="PackedScene" uid="uid://fhpjvv3q2p6s" path="res://Scene/Level.tscn" id="1_ee15d"]
+[ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="2_trjdc"]
+[ext_resource type="PackedScene" uid="uid://cad3tiwf81iv2" path="res://Scene/jumper.tscn" id="3_8k02d"]
+[ext_resource type="PackedScene" uid="uid://bkdyj32ktq7uk" path="res://Scene/end_block.tscn" id="4_qctq3"]
+[ext_resource type="PackedScene" uid="uid://dwiu3nna20mxo" path="res://Scene/guidance_label.tscn" id="5_gn3iw"]
+
+[node name="Level" instance=ExtResource("1_ee15d")]
+next_scene = "res://Scene/Levels/level3.tscn"
+
+[node name="player" parent="." index="1"]
+position = Vector2(93, 98)
+
+[node name="Gound_block" parent="FallAbleBlocks" index="0" instance=ExtResource("2_trjdc")]
+position = Vector2(4, 32)
+
+[node name="Gound_block2" parent="FallAbleBlocks" index="1" instance=ExtResource("2_trjdc")]
+position = Vector2(20, 32)
+
+[node name="Gound_block3" parent="FallAbleBlocks" index="2" instance=ExtResource("2_trjdc")]
+position = Vector2(36, 32)
+
+[node name="Gound_block4" parent="FallAbleBlocks" index="3" instance=ExtResource("2_trjdc")]
+position = Vector2(52, 32)
+
+[node name="Gound_block5" parent="FallAbleBlocks" index="4" instance=ExtResource("2_trjdc")]
+position = Vector2(68, 32)
+
+[node name="Gound_block6" parent="FallAbleBlocks" index="5" instance=ExtResource("2_trjdc")]
+position = Vector2(84, 32)
+
+[node name="Gound_block7" parent="FallAbleBlocks" index="6" instance=ExtResource("2_trjdc")]
+position = Vector2(100, 32)
+
+[node name="Gound_block8" parent="FallAbleBlocks" index="7" instance=ExtResource("2_trjdc")]
+position = Vector2(116, 32)
+
+[node name="Gound_block9" parent="FallAbleBlocks" index="8" instance=ExtResource("2_trjdc")]
+position = Vector2(157, -11)
+
+[node name="Gound_block10" parent="FallAbleBlocks" index="9" instance=ExtResource("2_trjdc")]
+position = Vector2(173, -11)
+
+[node name="Gound_block11" parent="FallAbleBlocks" index="10" instance=ExtResource("2_trjdc")]
+position = Vector2(189, -11)
+
+[node name="Gound_block12" parent="FallAbleBlocks" index="11" instance=ExtResource("2_trjdc")]
+position = Vector2(205, -11)
+
+[node name="Gound_block13" parent="FallAbleBlocks" index="12" instance=ExtResource("2_trjdc")]
+position = Vector2(221, -11)
+
+[node name="Gound_block14" parent="FallAbleBlocks" index="13" instance=ExtResource("2_trjdc")]
+position = Vector2(237, -11)
+
+[node name="Gound_block15" parent="FallAbleBlocks" index="14" instance=ExtResource("2_trjdc")]
+position = Vector2(253, -11)
+
+[node name="Gound_block16" parent="FallAbleBlocks" index="15" instance=ExtResource("2_trjdc")]
+position = Vector2(269, -11)
+
+[node name="Gound_block17" parent="FallAbleBlocks" index="16" instance=ExtResource("2_trjdc")]
+position = Vector2(307, 32)
+
+[node name="Gound_block18" parent="FallAbleBlocks" index="17" instance=ExtResource("2_trjdc")]
+position = Vector2(323, 32)
+
+[node name="Gound_block19" parent="FallAbleBlocks" index="18" instance=ExtResource("2_trjdc")]
+position = Vector2(339, 32)
+
+[node name="Gound_block20" parent="FallAbleBlocks" index="19" instance=ExtResource("2_trjdc")]
+position = Vector2(355, 32)
+
+[node name="Gound_block21" parent="FallAbleBlocks" index="20" instance=ExtResource("2_trjdc")]
+position = Vector2(371, 32)
+
+[node name="Gound_block22" parent="FallAbleBlocks" index="21" instance=ExtResource("2_trjdc")]
+position = Vector2(387, 32)
+
+[node name="Gound_block23" parent="FallAbleBlocks" index="22" instance=ExtResource("2_trjdc")]
+position = Vector2(403, 32)
+
+[node name="Gound_block24" parent="FallAbleBlocks" index="23" instance=ExtResource("2_trjdc")]
+position = Vector2(419, 32)
+
+[node name="Gound_block25" parent="FallAbleBlocks" index="24" instance=ExtResource("2_trjdc")]
+position = Vector2(450, -108)
+
+[node name="Gound_block26" parent="FallAbleBlocks" index="25" instance=ExtResource("2_trjdc")]
+position = Vector2(466, -108)
+
+[node name="Gound_block27" parent="FallAbleBlocks" index="26" instance=ExtResource("2_trjdc")]
+position = Vector2(482, -108)
+
+[node name="Gound_block28" parent="FallAbleBlocks" index="27" instance=ExtResource("2_trjdc")]
+position = Vector2(498, -108)
+
+[node name="Gound_block29" parent="FallAbleBlocks" index="28" instance=ExtResource("2_trjdc")]
+position = Vector2(514, -108)
+
+[node name="Gound_block30" parent="FallAbleBlocks" index="29" instance=ExtResource("2_trjdc")]
+position = Vector2(530, -108)
+
+[node name="Gound_block31" parent="FallAbleBlocks" index="30" instance=ExtResource("2_trjdc")]
+position = Vector2(546, -108)
+
+[node name="Gound_block32" parent="FallAbleBlocks" index="31" instance=ExtResource("2_trjdc")]
+position = Vector2(562, -108)
+
+[node name="jumper into" parent="dialogues" index="0" instance=ExtResource("5_gn3iw")]
+offset_left = 374.0
+offset_top = 54.0
+offset_right = 514.0
+offset_bottom = 83.0
+text = "use them for long 
+vertical jump"
+
+[node name="CollisionShape2D" parent="dialogues/jumper into/Area2D" index="0"]
+position = Vector2(164, -97)
+
+[node name="guidanceLabel" parent="dialogues" index="1" instance=ExtResource("5_gn3iw")]
+offset_left = -120.0
+offset_top = 6.5
+offset_right = 20.0
+offset_bottom = 35.5
+theme_override_font_sizes/font_size = 20
+text = "Try to jump"
+
+[node name="CollisionShape2D" parent="dialogues/guidanceLabel/Area2D" index="0"]
+position = Vector2(305, 90.5)
+
+[node name="jumper" parent="." index="10" instance=ExtResource("3_8k02d")]
+position = Vector2(490, 113)
+
+[node name="end_block" parent="." index="11" instance=ExtResource("4_qctq3")]
+position = Vector2(650, -8)
+
+[editable path="dialogues/jumper into"]
+[editable path="dialogues/guidanceLabel"]
