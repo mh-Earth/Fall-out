@@ -113,8 +113,7 @@ offset_left = 374.0
 offset_top = 54.0
 offset_right = 514.0
 offset_bottom = 83.0
-text = "use them for long 
-vertical jump"
+text = "use them for long jump"
 
 [node name="CollisionShape2D" parent="dialogues/jumper into/Area2D" index="0"]
 position = Vector2(164, -97)

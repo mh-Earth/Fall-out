@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr4ycedlmrr77"]
+
+[ext_resource type="PackedScene" uid="uid://fhpjvv3q2p6s" path="res://Scene/Level.tscn" id="1_vv27d"]
+[ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="2_ckesd"]
+[ext_resource type="PackedScene" uid="uid://bhjwmm165p8d4" path="res://Scene/moving_gound_block.tscn" id="3_1scep"]
+[ext_resource type="PackedScene" uid="uid://bkdyj32ktq7uk" path="res://Scene/end_block.tscn" id="4_1sgvp"]
+
+[node name="Level" instance=ExtResource("1_vv27d")]
+next_scene = "res://Scene/Levels/level8.tscn"
+
+[node name="Gound_block" parent="FallAbleBlocks" index="0" instance=ExtResource("2_ckesd")]
+
+[node name="Gound_block2" parent="FallAbleBlocks" index="1" instance=ExtResource("2_ckesd")]
+position = Vector2(16, 0)
+
+[node name="Gound_block3" parent="FallAbleBlocks" index="2" instance=ExtResource("2_ckesd")]
+position = Vector2(32, 0)
+
+[node name="Gound_block4" parent="FallAbleBlocks" index="3" instance=ExtResource("2_ckesd")]
+position = Vector2(48, 0)
+
+[node name="Gound_block5" parent="FallAbleBlocks" index="4" instance=ExtResource("2_ckesd")]
+position = Vector2(64, 0)
+
+[node name="Gound_block6" parent="FallAbleBlocks" index="5" instance=ExtResource("2_ckesd")]
+position = Vector2(80, 0)
+
+[node name="Gound_block7" parent="FallAbleBlocks" index="6" instance=ExtResource("2_ckesd")]
+position = Vector2(96, 0)
+
+[node name="Gound_block8" parent="FallAbleBlocks" index="7" instance=ExtResource("2_ckesd")]
+position = Vector2(112, 0)
+
+[node name="moving_gound_block" parent="FallAbleBlocks" index="8" instance=ExtResource("3_1scep")]
+position = Vector2(135, 0)
+active_on_load = true
+
+[node name="Gound_block9" parent="FallAbleBlocks" index="9" instance=ExtResource("2_ckesd")]
+position = Vector2(242, 0)
+
+[node name="end_block" parent="." index="10" instance=ExtResource("4_1sgvp")]
+position = Vector2(330, 100)

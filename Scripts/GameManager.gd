@@ -14,7 +14,6 @@ var level_end:bool = false:
 #player variables
 const playerHasPassed = 'playerHasPassed'
 var isPlayerAlive:bool = true
-#
 const PLAYER_SPEED = 100.0
 const PLAYER_JUMP_VELOCITY = -300.0
 #collision lasyer
@@ -27,3 +26,5 @@ var jumper_max_force = -700
 #power ups vairables
 const player_speed_increaser = 100
 var player_max_speed = 500
+#health bar 
+var health_bar_max = 25

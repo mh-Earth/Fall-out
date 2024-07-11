@@ -33,7 +33,6 @@ func _process(_delta):
 	for ray_cast in raycasts:
 		if ray_cast.is_colliding():
 			var collider = ray_cast.get_collider()
-			print(collider)
 			if is_instance_valid(collider):
 				var current_group = get_tree().get_nodes_in_group("fallableblocks")
 				if collider not in current_group:
@@ -44,8 +43,6 @@ func gameover():
 	pass
 
 func player_on_jumper(_dir):
-	#dir = Vector2(dir.y,dir.x)
-	#print(dir)
 	velocity.y =  GameManager.jumper_force
 
 func _physics_process(delta):

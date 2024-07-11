@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cq8ite1tkdmrh" path="res://Scene/Levels/level1.tscn" id="1_al8gw"]
 [ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="2_j8qvr"]
-[ext_resource type="PackedScene" uid="uid://xdhhf26extri" path="res://Scene/powerups/powerups.tscn" id="3_lkuf5"]
 [ext_resource type="PackedScene" uid="uid://dwiu3nna20mxo" path="res://Scene/guidance_label.tscn" id="3_r5dja"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_y0inq"]
+[ext_resource type="PackedScene" uid="uid://bpp5prn0i7p1t" path="res://Scene/powerups/powerup.tscn" id="5_mw0df"]
 
 [node name="Level" instance=ExtResource("1_al8gw")]
 next_scene = "res://Scene/Levels/level4.tscn"
@@ -218,15 +218,9 @@ script = ExtResource("3_y0inq")
 [node name="kill zone" parent="." index="5"]
 position = Vector2(862, 219)
 
-[node name="progress_value" parent="UI" index="1"]
-offset_right = 305.0
-offset_bottom = 22.0
-
-[node name="powerups" parent="." index="10" instance=ExtResource("3_lkuf5")]
-position = Vector2(529, 94)
-
-[node name="powerups2" parent="." index="11" instance=ExtResource("3_lkuf5")]
-position = Vector2(1119, 93)
+[node name="TextureProgressBar" parent="UI" index="0"]
+max_value = 15.0
+value = 12.0
 
 [node name="guidanceLabel2" parent="dialogues" index="0" instance=ExtResource("3_r5dja")]
 z_as_relative = false
@@ -235,7 +229,7 @@ offset_top = -69.0
 offset_right = 59.0
 offset_bottom = 61.0
 theme_override_font_sizes/font_size = 20
-text = "use very thing in
+text = "Use very thing in
  your power to live"
 
 [node name="CollisionShape2D" parent="dialogues/guidanceLabel2/Area2D" index="0"]
@@ -246,14 +240,23 @@ offset_left = 721.0
 offset_top = 31.0
 offset_right = 861.0
 offset_bottom = 60.0
-text = "what was that??
-speed up??"
+text = "Power up
+type:postive"
 
 [node name="CollisionShape2D" parent="dialogues/guidanceLabel/Area2D" index="0"]
 position = Vector2(355, 51)
 
-[node name="end_block" parent="." index="13"]
+[node name="end_block" parent="." index="11"]
 position = Vector2(1381, 113)
+
+[node name="powerUp2" parent="." index="12" instance=ExtResource("5_mw0df")]
+position = Vector2(317, 93)
+powertype = "speedup"
+rotation_speed = 500
+
+[node name="powerUp3" parent="." index="13" instance=ExtResource("5_mw0df")]
+position = Vector2(1121, 93)
+powertype = "speedup"
 
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_t_imer_timeout"]
 

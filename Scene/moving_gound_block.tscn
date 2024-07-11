@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhjwmm165p8d4"]
+
+[ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="1_04v5n"]
+[ext_resource type="Script" path="res://assets/sprites/moving_gound_block.gd" id="2_pkcu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2wrj"]
+size = Vector2(16, 25)
+
+[node name="Gound_block" instance=ExtResource("1_04v5n")]
+script = ExtResource("2_pkcu5")
+active_on_load = false
+platfrom = false
+
+[node name="Timer" parent="." index="3"]
+wait_time = 1.0
+
+[node name="RayCastLeft" type="RayCast2D" parent="." index="4"]
+target_position = Vector2(-9, 0)
+collision_mask = 2
+
+[node name="RayCastRight" type="RayCast2D" parent="." index="5"]
+target_position = Vector2(9, 0)
+collision_mask = 2
+
+[node name="player detection area" type="Area2D" parent="." index="6"]
+collision_layer = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player detection area" index="0"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_e2wrj")
+
+[connection signal="body_entered" from="player detection area" to="." method="_on_player_detection_area_body_entered"]

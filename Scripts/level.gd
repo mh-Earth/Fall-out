@@ -18,10 +18,33 @@ func _ready():
 	GameManager.isFalling = false
 	# Scene opning transition
 	transtions_layer.fade_in()
+	init_health_bar()
+	
+func init_health_bar():
+	progress_bar.value = 0
+	progress_value.text = str(0)
+	progress_bar.max_value = GameManager.health_bar_max
 	
 func start_game_play():
 	start_falling()
 
+func  restart_level():
+	get_tree().reload_current_scene()
+
+func handel_life_bar(value:int): #previouly known as progress bar
+	
+	#var tween = get_tree().create_tween()
+	#tween.tween_property(progress_bar,"value",value,1).set_trans(Tween.TRANS_LINEAR)
+	progress_bar.value = value
+	
+	progress_value.text = str(value)
+	
+	if value >= progress_bar.max_value:
+		progress_bar.modulate = Color("red")
+	else:
+		progress_bar.modulate = Color("white")
+		
+	
 func after_player_die_scene():
 	#adding fallableblock to 'fallingblocks' group
 	var blockInFallableblocks = fall_able_blocks.get_children()
@@ -30,15 +53,17 @@ func after_player_die_scene():
 	isPlayerFalls = true
 
 func  _process(_delta):
+	if Input.is_action_just_pressed("restart"):
+		restart_level()	
+		return
 	#print(GameManager.isFalling)
 	player_speed_lable.text = "player speed:" + str(player.velocity.x)
 	
 	if GameManager.isFalling:
 		var fallableblocksinscene = get_tree().get_nodes_in_group("fallableblocks")
 		#var playerHasPassed = get_tree().get_nodes_in_group(GameManager.playerHasPassed)
-		progress_bar.value = len(fallableblocksinscene)
-		progress_value.text = str(len(fallableblocksinscene))
-		
+		handel_life_bar(len(fallableblocksinscene))
+
 #		if player touch the last falling block.Means player is falling
 		if len(fallableblocksinscene) == 0 or not GameManager.isPlayerAlive:
 			after_player_die_scene()

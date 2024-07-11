@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl58r04y0iiox"]
+[gd_scene load_steps=7 format=3 uid="uid://dl58r04y0iiox"]
 
 [ext_resource type="PackedScene" uid="uid://cq8ite1tkdmrh" path="res://Scene/Levels/level1.tscn" id="1_007dr"]
 [ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="2_0l13i"]
-[ext_resource type="PackedScene" uid="uid://xdhhf26extri" path="res://Scene/powerups/powerups.tscn" id="3_0acg7"]
 [ext_resource type="PackedScene" uid="uid://dwiu3nna20mxo" path="res://Scene/guidance_label.tscn" id="3_emimu"]
 [ext_resource type="PackedScene" uid="uid://bkdyj32ktq7uk" path="res://Scene/end_block.tscn" id="4_du8rq"]
+[ext_resource type="PackedScene" uid="uid://bpp5prn0i7p1t" path="res://Scene/powerups/powerup.tscn" id="5_ufh8y"]
+[ext_resource type="PackedScene" uid="uid://eay1g7u7ad2e" path="res://Scene/slowmo.tscn" id="6_mwpnk"]
 
 [node name="Level" instance=ExtResource("1_007dr")]
 next_scene = "res://Scene/Levels/level5.tscn"
@@ -91,61 +92,61 @@ position = Vector2(614, 12)
 position = Vector2(630, 12)
 
 [node name="Gound_block65" parent="FallAbleBlocks" index="40" instance=ExtResource("2_0l13i")]
-position = Vector2(708, 274)
+position = Vector2(698, 338)
 
 [node name="Gound_block66" parent="FallAbleBlocks" index="41" instance=ExtResource("2_0l13i")]
-position = Vector2(724, 274)
+position = Vector2(714, 338)
 
 [node name="Gound_block67" parent="FallAbleBlocks" index="42" instance=ExtResource("2_0l13i")]
-position = Vector2(740, 274)
+position = Vector2(730, 338)
 
 [node name="Gound_block38" parent="FallAbleBlocks" index="43" instance=ExtResource("2_0l13i")]
-position = Vector2(756, 274)
+position = Vector2(746, 338)
 
 [node name="Gound_block39" parent="FallAbleBlocks" index="44" instance=ExtResource("2_0l13i")]
-position = Vector2(772, 274)
+position = Vector2(762, 338)
 
 [node name="Gound_block40" parent="FallAbleBlocks" index="45" instance=ExtResource("2_0l13i")]
-position = Vector2(788, 274)
+position = Vector2(778, 338)
 
 [node name="Gound_block68" parent="FallAbleBlocks" index="46" instance=ExtResource("2_0l13i")]
-position = Vector2(804, 274)
+position = Vector2(794, 338)
 
 [node name="Gound_block69" parent="FallAbleBlocks" index="47" instance=ExtResource("2_0l13i")]
-position = Vector2(820, 274)
+position = Vector2(810, 338)
 
 [node name="Gound_block70" parent="FallAbleBlocks" index="48" instance=ExtResource("2_0l13i")]
-position = Vector2(836, 274)
+position = Vector2(826, 338)
 
 [node name="Gound_block71" parent="FallAbleBlocks" index="49" instance=ExtResource("2_0l13i")]
-position = Vector2(852, 274)
+position = Vector2(842, 338)
 
 [node name="Gound_block72" parent="FallAbleBlocks" index="50" instance=ExtResource("2_0l13i")]
-position = Vector2(868, 274)
+position = Vector2(858, 338)
 
 [node name="Gound_block73" parent="FallAbleBlocks" index="51" instance=ExtResource("2_0l13i")]
-position = Vector2(884, 274)
+position = Vector2(874, 338)
 
 [node name="Gound_block74" parent="FallAbleBlocks" index="52" instance=ExtResource("2_0l13i")]
-position = Vector2(900, 274)
+position = Vector2(890, 338)
 
 [node name="Gound_block75" parent="FallAbleBlocks" index="53" instance=ExtResource("2_0l13i")]
-position = Vector2(916, 274)
+position = Vector2(906, 338)
 
 [node name="Gound_block76" parent="FallAbleBlocks" index="54" instance=ExtResource("2_0l13i")]
-position = Vector2(932, 274)
+position = Vector2(922, 338)
 
 [node name="Gound_block77" parent="FallAbleBlocks" index="55" instance=ExtResource("2_0l13i")]
-position = Vector2(948, 274)
+position = Vector2(938, 338)
 
 [node name="Gound_block78" parent="FallAbleBlocks" index="56" instance=ExtResource("2_0l13i")]
-position = Vector2(964, 274)
+position = Vector2(954, 338)
 
 [node name="Gound_block79" parent="FallAbleBlocks" index="57" instance=ExtResource("2_0l13i")]
-position = Vector2(980, 274)
+position = Vector2(970, 338)
 
 [node name="Gound_block80" parent="FallAbleBlocks" index="58" instance=ExtResource("2_0l13i")]
-position = Vector2(996, 274)
+position = Vector2(986, 338)
 
 [node name="Gound_block17" parent="FallAbleBlocks" index="59"]
 visible = false
@@ -178,13 +179,9 @@ position = Vector2(861, 12)
 [node name="kill zone" parent="." index="4"]
 position = Vector2(-50, 347)
 
-[node name="progress_value" parent="UI" index="1"]
-offset_right = 305.0
-offset_bottom = 22.0
-
-[node name="powerups2" parent="." index="9" instance=ExtResource("3_0acg7")]
-position = Vector2(694, 94)
-powertype = "speeddown"
+[node name="TextureProgressBar" parent="UI" index="0"]
+max_value = 15.0
+value = 12.0
 
 [node name="guidanceLabel2" parent="dialogues" index="0" instance=ExtResource("3_emimu")]
 z_as_relative = false
@@ -200,24 +197,39 @@ text = "use very thing in
 position = Vector2(438, 145)
 
 [node name="guidanceLabel" parent="dialogues" index="1"]
-offset_left = 740.0
-offset_top = 276.0
-offset_right = 880.0
-offset_bottom = 305.0
+offset_left = 732.0
+offset_top = 235.0
+offset_right = 872.0
+offset_bottom = 264.0
+theme_override_colors/font_color = Color(0.560784, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
-text = "Not everythings gives you 
-power some takes also"
+text = "Power up
+type:negative"
 
 [node name="CollisionShape2D" parent="dialogues/guidanceLabel/Area2D" index="0"]
-position = Vector2(310, 63)
+position = Vector2(300, 160)
 
-[node name="end_block2" parent="." index="11" instance=ExtResource("4_du8rq")]
-position = Vector2(1084, 374)
+[node name="end_block2" parent="." index="10" instance=ExtResource("4_du8rq")]
+position = Vector2(1074, 438)
 
-[node name="end_block" parent="." index="12"]
+[node name="end_block" parent="." index="11"]
 position = Vector2(949, 112)
+
+[node name="powerUp2" parent="." index="12" instance=ExtResource("5_ufh8y")]
+position = Vector2(693, 94)
+powertype = "speeddown"
+
+[node name="slowmo" parent="." index="13" instance=ExtResource("6_mwpnk")]
+position = Vector2(790, 241)
+
+[node name="CollisionShape2D" parent="slowmo" index="0"]
+position = Vector2(18, 45)
+
+[node name="Timer" parent="slowmo" index="1"]
+one_shot = true
 
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_t_imer_timeout"]
 
 [editable path="dialogues/guidanceLabel2"]
 [editable path="dialogues/guidanceLabel"]
+[editable path="slowmo"]

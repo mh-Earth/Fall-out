@@ -8,6 +8,9 @@
 [node name="Level" instance=ExtResource("1_llyei")]
 next_scene = "res://Scene/Levels/level1.tscn"
 
+[node name="player" parent="." index="1"]
+position = Vector2(621, 92)
+
 [node name="Gound_block" parent="FallAbleBlocks" index="0" instance=ExtResource("2_ln4nu")]
 position = Vector2(3, 26)
 

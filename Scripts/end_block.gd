@@ -20,7 +20,8 @@ func _process(delta):
 	
 func _on_area_2d_body_entered(_body):
 	player_reach_end.emit()
-	player.position.x = position.x
+	var tween = get_tree().create_tween()
+	tween.tween_property(player,'position:x',position.x,.3)
 	timer.start()
 
 

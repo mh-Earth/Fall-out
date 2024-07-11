@@ -87,7 +87,10 @@ position = Vector2(440, 12)
 position = Vector2(456, 12)
 
 [node name="kill zone" parent="." index="4"]
-position = Vector2(-453, 202)
+position = Vector2(-59, 457)
+
+[node name="CollisionShape2D" parent="kill zone" index="0"]
+position = Vector2(21, 427)
 
 [node name="guidanceLabel" parent="dialogues" index="0" instance=ExtResource("4_flse7")]
 offset_left = -96.0
