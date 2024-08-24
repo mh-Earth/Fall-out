@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fall Out"
-run/main_scene="res://Scene/Levels/level0.tscn"
+run/main_scene="res://Scene/Levels/tut1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,10 @@ GameManager="*res://Scene/game_manager.tscn"
 [editor_plugins]
 
 enabled=PackedStringArray()
+
+[gui]
+
+theme/custom_font="res://assets/fonts/debug-font/DebugFreeTrial-MVdYB.otf"
 
 [input]
 
@@ -66,3 +70,5 @@ restart={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+viewport/hdr_2d=true
+2d/sdf/scale=2

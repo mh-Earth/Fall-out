@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ss75ikk27yr"]
+
+[ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="1_5b41b"]
+[ext_resource type="Script" path="res://Scripts/player_spawner.gd" id="2_x0521"]
+
+[node name="Gound_block" instance=ExtResource("1_5b41b")]
+
+[node name="Marker2D" type="Marker2D" parent="." index="4"]
+position = Vector2(0, -19)
+script = ExtResource("2_x0521")

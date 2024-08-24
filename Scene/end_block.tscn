@@ -1,12 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkdyj32ktq7uk"]
+[gd_scene load_steps=8 format=3 uid="uid://bkdyj32ktq7uk"]
 
 [ext_resource type="Script" path="res://Scripts/end_block.gd" id="1_73ar7"]
-
-[sub_resource type="Gradient" id="Gradient_1br6i"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_vgurp"]
-gradient = SubResource("Gradient_1br6i")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imp55"]
 size = Vector2(16, 16)
@@ -17,15 +11,20 @@ size = Vector2(12, 30)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3qkhh"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="Gradient" id="Gradient_1br6i"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vgurp"]
+gradient = SubResource("Gradient_1br6i")
+
+[sub_resource type="Environment" id="Environment_05pjb"]
+background_mode = 3
+glow_enabled = true
+
 [node name="end_block" type="StaticBody2D"]
+modulate = Color(0.741176, 0.0313726, 0.231373, 1)
 collision_layer = 64
 script = ExtResource("1_73ar7")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0, 1)
-scale = Vector2(0.0625, 16)
-texture = SubResource("GradientTexture1D_vgurp")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_imp55")
@@ -46,6 +45,14 @@ occluder = SubResource("OccluderPolygon2D_3qkhh")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0625, 16)
+texture = SubResource("GradientTexture1D_vgurp")
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_05pjb")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

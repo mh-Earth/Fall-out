@@ -15,7 +15,13 @@ var level_end:bool = false:
 const playerHasPassed = 'playerHasPassed'
 var isPlayerAlive:bool = true
 const PLAYER_SPEED = 100.0
-const PLAYER_JUMP_VELOCITY = -300.0
+var PLAYER_JUMP_VELOCITY = -300
+var player_gravity:int = ProjectSettings.get_setting("physics/2d/default_gravity"):
+	set(value):
+		player_gravity = value
+		print("player gravity changes")
+		PLAYER_JUMP_VELOCITY = -(value * 0.31)
+
 #collision lasyer
 var falling_layer:int = 9
 var fallable_layer:int =2

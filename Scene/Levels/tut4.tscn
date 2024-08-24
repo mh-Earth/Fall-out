@@ -1,0 +1,177 @@
+[gd_scene load_steps=6 format=3 uid="uid://e8u0ut2eqgac"]
+
+[ext_resource type="PackedScene" uid="uid://fhpjvv3q2p6s" path="res://Scene/Level.tscn" id="1_sm24l"]
+[ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="2_7wf87"]
+[ext_resource type="PackedScene" uid="uid://dwiu3nna20mxo" path="res://Scene/guidance_label.tscn" id="3_f7nv5"]
+[ext_resource type="PackedScene" uid="uid://bkdyj32ktq7uk" path="res://Scene/end_block.tscn" id="4_vfjkj"]
+[ext_resource type="PackedScene" uid="uid://bhjwmm165p8d4" path="res://Scene/moving_gound_block.tscn" id="5_xxmsu"]
+
+[node name="Level" instance=ExtResource("1_sm24l")]
+next_scene = "res://Scene/Levels/tut5.tscn"
+
+[node name="player" parent="." index="1"]
+position = Vector2(13, 111)
+
+[node name="Gound_block" parent="FallAbleBlocks" index="0" instance=ExtResource("2_7wf87")]
+position = Vector2(-59, 39)
+
+[node name="Gound_block2" parent="FallAbleBlocks" index="1" instance=ExtResource("2_7wf87")]
+position = Vector2(-43, 39)
+
+[node name="Gound_block3" parent="FallAbleBlocks" index="2" instance=ExtResource("2_7wf87")]
+position = Vector2(-27, 39)
+
+[node name="Gound_block4" parent="FallAbleBlocks" index="3" instance=ExtResource("2_7wf87")]
+position = Vector2(-11, 39)
+
+[node name="Gound_block5" parent="FallAbleBlocks" index="4" instance=ExtResource("2_7wf87")]
+position = Vector2(5, 39)
+
+[node name="Gound_block6" parent="FallAbleBlocks" index="5" instance=ExtResource("2_7wf87")]
+position = Vector2(21, 39)
+
+[node name="Gound_block7" parent="FallAbleBlocks" index="6" instance=ExtResource("2_7wf87")]
+position = Vector2(37, 39)
+
+[node name="Gound_block8" parent="FallAbleBlocks" index="7" instance=ExtResource("2_7wf87")]
+position = Vector2(53, 39)
+
+[node name="Gound_block9" parent="FallAbleBlocks" index="8" instance=ExtResource("2_7wf87")]
+position = Vector2(69, 39)
+
+[node name="Gound_block10" parent="FallAbleBlocks" index="9" instance=ExtResource("2_7wf87")]
+position = Vector2(85, 39)
+
+[node name="Gound_block11" parent="FallAbleBlocks" index="10" instance=ExtResource("2_7wf87")]
+position = Vector2(101, 39)
+
+[node name="Gound_block12" parent="FallAbleBlocks" index="11" instance=ExtResource("2_7wf87")]
+position = Vector2(117, 39)
+
+[node name="Gound_block13" parent="FallAbleBlocks" index="12" instance=ExtResource("2_7wf87")]
+position = Vector2(133, 39)
+
+[node name="Gound_block14" parent="FallAbleBlocks" index="13" instance=ExtResource("2_7wf87")]
+position = Vector2(149, 39)
+
+[node name="Gound_block15" parent="FallAbleBlocks" index="14" instance=ExtResource("2_7wf87")]
+position = Vector2(165, 39)
+
+[node name="Gound_block16" parent="FallAbleBlocks" index="15" instance=ExtResource("2_7wf87")]
+position = Vector2(181, 39)
+
+[node name="Gound_block17" parent="FallAbleBlocks" index="16" instance=ExtResource("2_7wf87")]
+position = Vector2(197, 39)
+
+[node name="Gound_block18" parent="FallAbleBlocks" index="17" instance=ExtResource("2_7wf87")]
+position = Vector2(213, 39)
+
+[node name="Gound_block19" parent="FallAbleBlocks" index="18" instance=ExtResource("2_7wf87")]
+position = Vector2(229, 39)
+
+[node name="Gound_block20" parent="FallAbleBlocks" index="19" instance=ExtResource("2_7wf87")]
+position = Vector2(245, 39)
+
+[node name="Gound_block22" parent="FallAbleBlocks" index="20" instance=ExtResource("2_7wf87")]
+position = Vector2(369, 39)
+
+[node name="Gound_block23" parent="FallAbleBlocks" index="21" instance=ExtResource("2_7wf87")]
+position = Vector2(385, 39)
+
+[node name="Gound_block24" parent="FallAbleBlocks" index="22" instance=ExtResource("2_7wf87")]
+position = Vector2(401, 39)
+
+[node name="Gound_block25" parent="FallAbleBlocks" index="23" instance=ExtResource("2_7wf87")]
+position = Vector2(417, 39)
+
+[node name="Gound_block26" parent="FallAbleBlocks" index="24" instance=ExtResource("2_7wf87")]
+position = Vector2(433, 39)
+
+[node name="Gound_block27" parent="FallAbleBlocks" index="25" instance=ExtResource("2_7wf87")]
+position = Vector2(449, 39)
+
+[node name="Gound_block28" parent="FallAbleBlocks" index="26" instance=ExtResource("2_7wf87")]
+position = Vector2(465, 39)
+
+[node name="Gound_block29" parent="FallAbleBlocks" index="27" instance=ExtResource("2_7wf87")]
+position = Vector2(481, 39)
+
+[node name="Gound_block30" parent="FallAbleBlocks" index="28" instance=ExtResource("2_7wf87")]
+position = Vector2(497, 39)
+
+[node name="Gound_block31" parent="FallAbleBlocks" index="29" instance=ExtResource("2_7wf87")]
+position = Vector2(513, 39)
+
+[node name="Gound_block32" parent="FallAbleBlocks" index="30" instance=ExtResource("2_7wf87")]
+position = Vector2(529, 39)
+
+[node name="Gound_block33" parent="FallAbleBlocks" index="31" instance=ExtResource("2_7wf87")]
+position = Vector2(751, 39)
+
+[node name="Gound_block34" parent="FallAbleBlocks" index="32" instance=ExtResource("2_7wf87")]
+position = Vector2(767, 39)
+
+[node name="Gound_block35" parent="FallAbleBlocks" index="33" instance=ExtResource("2_7wf87")]
+position = Vector2(783, 39)
+
+[node name="Gound_block36" parent="FallAbleBlocks" index="34" instance=ExtResource("2_7wf87")]
+position = Vector2(799, 39)
+
+[node name="Gound_block37" parent="FallAbleBlocks" index="35" instance=ExtResource("2_7wf87")]
+position = Vector2(815, 39)
+
+[node name="Gound_block38" parent="FallAbleBlocks" index="36" instance=ExtResource("2_7wf87")]
+position = Vector2(831, 39)
+
+[node name="Gound_block39" parent="FallAbleBlocks" index="37" instance=ExtResource("2_7wf87")]
+position = Vector2(847, 39)
+
+[node name="Gound_block40" parent="FallAbleBlocks" index="38" instance=ExtResource("2_7wf87")]
+position = Vector2(863, 39)
+
+[node name="Gound_block41" parent="FallAbleBlocks" index="39" instance=ExtResource("2_7wf87")]
+position = Vector2(879, 39)
+
+[node name="Gound_block42" parent="FallAbleBlocks" index="40" instance=ExtResource("2_7wf87")]
+position = Vector2(895, 39)
+
+[node name="Gound_block43" parent="FallAbleBlocks" index="41" instance=ExtResource("2_7wf87")]
+position = Vector2(911, 39)
+
+[node name="Node2D" type="Node2D" parent="dialogues" index="0"]
+position = Vector2(-120, 66)
+scale = Vector2(0.05, 0.05)
+
+[node name="guidanceLabel" parent="dialogues/Node2D" index="0" instance=ExtResource("3_f7nv5")]
+offset_left = -960.0
+offset_top = -1320.0
+offset_right = 3747.0
+offset_bottom = -870.0
+text = "Huh? Same but different"
+
+[node name="Area2D" parent="dialogues/Node2D/guidanceLabel" index="0"]
+position = Vector2(7940, 1680)
+scale = Vector2(-14.2422, 24.8301)
+
+[node name="CollisionShape2D" parent="dialogues/Node2D/guidanceLabel/Area2D" index="0"]
+position = Vector2(4.28553e-05, 0)
+
+[node name="end_block" parent="." index="10" instance=ExtResource("4_vfjkj")]
+position = Vector2(1133, 138)
+
+[node name="Gound_block" parent="." index="11" instance=ExtResource("5_xxmsu")]
+position = Vector2(380, 144)
+
+[node name="Gound_block2" parent="." index="12" instance=ExtResource("5_xxmsu")]
+position = Vector2(617, 139)
+active_on_load = false
+platfrom = true
+fallable = true
+
+[node name="Gound_block3" parent="." index="13" instance=ExtResource("5_xxmsu")]
+position = Vector2(1016, 140)
+active_on_load = false
+platfrom = true
+fallable = true
+
+[editable path="dialogues/Node2D/guidanceLabel"]

@@ -8,7 +8,7 @@ var isSlowmo:String = ""
 func _ready():
 	timer.wait_time = slowmo_duration
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	Engine.time_scale = slowmo_speed
 	isSlowmo = "start"
 	timer.start()
@@ -17,7 +17,7 @@ func _on_body_entered(body):
 func _on_timer_timeout():
 	isSlowmo = 'end'
 	
-func _process(delta):
+func _process(_delta):
 	match isSlowmo:
 		'start':
 			if Engine.time_scale >= slowmo_duration:

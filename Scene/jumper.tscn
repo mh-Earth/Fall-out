@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cad3tiwf81iv2"]
+[gd_scene load_steps=19 format=3 uid="uid://cad3tiwf81iv2"]
 
 [ext_resource type="Script" path="res://Scripts/jumper.gd" id="1_fpx5f"]
 [ext_resource type="Script" path="res://Scripts/jumper_head.gd" id="2_x313m"]
@@ -59,6 +59,35 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ggoxu"]
+resource_name = "color"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.741176, 0.0313726, 0.231373, 1), Color(0, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_dmxwy"]
 resource_name = "off"
@@ -95,6 +124,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mmyik"]
 _data = {
 "RESET": SubResource("Animation_thkpc"),
+"color": SubResource("Animation_ggoxu"),
 "off": SubResource("Animation_dmxwy"),
 "on": SubResource("Animation_b50o5")
 }
@@ -102,7 +132,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6uj5"]
 
 [node name="jumper" type="Node2D"]
-modulate = Color(0.804562, 0.369775, 0.568176, 1)
+modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.8, 0.9)
 script = ExtResource("1_fpx5f")
 
@@ -164,6 +194,7 @@ collision_mask = 2
 libraries = {
 "": SubResource("AnimationLibrary_mmyik")
 }
+autoplay = "color"
 speed_scale = 4.0
 movie_quit_on_finish = true
 

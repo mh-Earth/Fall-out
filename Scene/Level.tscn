@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://fhpjvv3q2p6s"]
+[gd_scene load_steps=21 format=3 uid="uid://fhpjvv3q2p6s"]
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_a3ukw"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_pc8at"]
@@ -7,10 +7,27 @@
 [ext_resource type="Script" path="res://Scripts/level_transions.gd" id="7_q5osr"]
 
 [sub_resource type="Gradient" id="Gradient_3lb4g"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_77seu"]
 gradient = SubResource("Gradient_3lb4g")
+
+[sub_resource type="Gradient" id="Gradient_2i75y"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ed4ni"]
+gradient = SubResource("Gradient_2i75y")
+width = 30
+use_hdr = true
+
+[sub_resource type="Gradient" id="Gradient_ipxhs"]
+offsets = PackedFloat32Array(0.00636943, 0.541401, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.860369, 0.860369, 0.860369, 1, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_jgcbj"]
+offsets = PackedFloat32Array(0, 0.496815, 0.5, 1)
+colors = PackedColorArray(0.27451, 0.917647, 1, 0.670588, 0.638403, 0.958353, 1, 1, 0.741176, 0.0313726, 0.231373, 1, 0.741176, 0.0313726, 0.231373, 0.596078)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b4oe3"]
 normal = Vector2(-0.0256326, -0.999671)
@@ -84,7 +101,7 @@ _data = {
 script = ExtResource("1_pc8at")
 
 [node name="bg" type="Sprite2D" parent="."]
-modulate = Color(0.56963, 0.561646, 0.81278, 1)
+modulate = Color(0, 0, 0, 1)
 position = Vector2(1112.06, 25.9998)
 scale = Vector2(18.8276, 2950)
 texture = SubResource("GradientTexture1D_77seu")
@@ -111,32 +128,52 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("1_a3ukw")
 
+[node name="bg_particles" type="CPUParticles2D" parent="player"]
+unique_name_in_owner = true
+z_index = 100
+z_as_relative = false
+position = Vector2(15, -43)
+scale = Vector2(600, 600)
+amount = 700
+lifetime = 10.0
+preprocess = 397.79
+lifetime_randomness = 1.0
+texture = SubResource("GradientTexture1D_ed4ni")
+emission_shape = 3
+emission_rect_extents = Vector2(1.49, 0.69)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+split_scale = true
+scale_curve_x = null
+scale_curve_y = null
+color_ramp = SubResource("Gradient_ipxhs")
+color_initial_ramp = SubResource("Gradient_jgcbj")
+
 [node name="FallAbleBlocks" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(72, 100)
 metadata/_edit_lock_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-position = Vector2(238, -262)
+texture_filter = 1
+position = Vector2(239, -262)
 rotation = -0.82434
-color = Color(1, 1, 1, 0.635294)
-energy = 0.41
-shadow_enabled = true
-height = 0.39
-max_distance = 9840.0
+energy = 0.4
+shadow_color = Color(1, 1, 1, 0.0666667)
+shadow_filter = 1
 
 [node name="kill zone" type="Area2D" parent="."]
-position = Vector2(65, 139)
+position = Vector2(80, 537)
 collision_layer = 32
 collision_mask = 7
 script = ExtResource("3_pf8g6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill zone"]
+rotation = 0.0261799
 shape = SubResource("WorldBoundaryShape2D_b4oe3")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 texture_filter = 1
-color = Color(0.93408, 0.93408, 0.93408, 1)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -159,19 +196,12 @@ texture_filter = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = -23.0
-offset_right = 49.0
+offset_left = 10.0
+offset_top = -45.0
+offset_right = 50.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 50
 text = "15"
-
-[node name="player_speed" type="Label" parent="UI"]
-offset_left = 7.0
-offset_top = 31.0
-offset_right = 106.0
-offset_bottom = 54.0
-text = "player speed : 00"
 
 [node name="GameOverTimer" type="Timer" parent="."]
 one_shot = true
@@ -188,7 +218,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.105882, 0.105882, 0.105882, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Transtions layer"]
 libraries = {
@@ -199,6 +229,7 @@ speed_scale = 1.829
 [node name="dialogues" type="Node2D" parent="."]
 
 [connection signal="playerMoved" from="player" to="." method="_on_player_player_moved"]
+[connection signal="player_die" from="player" to="." method="_on_player_player_die"]
 [connection signal="body_entered" from="kill zone" to="kill zone" method="_on_body_entered"]
 [connection signal="gameover" from="kill zone" to="." method="_on_kill_zone_gameover"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

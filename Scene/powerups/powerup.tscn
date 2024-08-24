@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpp5prn0i7p1t"]
+[gd_scene load_steps=9 format=3 uid="uid://bpp5prn0i7p1t"]
 
 [ext_resource type="Script" path="res://Scripts/powerups.gd" id="1_gtrbo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eefnu"]
-size = Vector2(12, 12)
+size = Vector2(8, 8)
 
 [sub_resource type="Gradient" id="Gradient_fdsaq"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -11,12 +11,53 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_oamyw"]
 gradient = SubResource("Gradient_fdsaq")
 
+[sub_resource type="Animation" id="Animation_ha7ua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1nidq"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 1, 1), Color(0.741176, 0.0313726, 0.231373, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lx83o"]
+_data = {
+"RESET": SubResource("Animation_ha7ua"),
+"idle": SubResource("Animation_1nidq")
+}
+
+[sub_resource type="Environment" id="Environment_lo8jq"]
+background_mode = 3
+glow_enabled = true
+
 [node name="powerUp2" type="RigidBody2D"]
 collision_layer = 18
 collision_mask = 33
 gravity_scale = 0.0
 script = ExtResource("1_gtrbo")
-rotation_speed = 10
+powertype = "die"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_eefnu")
@@ -24,7 +65,7 @@ disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.19209e-07, 2.08616e-07)
-scale = Vector2(0.046875, 12)
+scale = Vector2(0.03125, 8)
 texture = SubResource("GradientTexture1D_oamyw")
 
 [node name="power_timeout" type="Timer" parent="."]
@@ -34,6 +75,15 @@ collision_layer = 144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_eefnu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lx83o")
+}
+autoplay = "idle"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lo8jq")
 
 [connection signal="timeout" from="power_timeout" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

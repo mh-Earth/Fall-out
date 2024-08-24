@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck2fphx4aessn"]
+
+[sub_resource type="Gradient" id="Gradient_mnn5l"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dsc14"]
+gradient = SubResource("Gradient_mnn5l")
+width = 1
+
+[node name="PowerUpStatusLable" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(394, 303)
+rotation = 0.785398
+scale = Vector2(300, 300)
+texture = SubResource("GradientTexture1D_dsc14")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 696.0
+offset_top = 80.0
+offset_right = 1820.0
+offset_bottom = 530.0
+theme_override_font_sizes/font_size = 500
+text = "power"
+horizontal_alignment = 1
+vertical_alignment = 1

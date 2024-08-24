@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-@onready var color_rect = $ColorRect
 @onready var animation_player = $AnimationPlayer
 
 

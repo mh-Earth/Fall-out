@@ -5,8 +5,8 @@ extends Node2D
 @onready var transtions_layer = %"Transtions layer"
 @onready var progress_bar = $UI/TextureProgressBar
 @onready var progress_value = $UI/progress_value
-@onready var player_speed_lable = $UI/player_speed
 @onready var player = %player
+@onready var bg_particeles = %bg_particles
 
 @export_file var next_scene:String
 
@@ -19,6 +19,8 @@ func _ready():
 	# Scene opning transition
 	transtions_layer.fade_in()
 	init_health_bar()
+	#player gravity
+	GameManager.player_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	
 func init_health_bar():
 	progress_bar.value = 0
@@ -53,11 +55,12 @@ func after_player_die_scene():
 	isPlayerFalls = true
 
 func  _process(_delta):
+	# print("player gravity:" + str(GameManager.player_gravity), " player velocity y:"+ str(player.velocity.y))
+	# print("player jump forece:" + str(GameManager.PLAYER_JUMP_VELOCITY)) 
 	if Input.is_action_just_pressed("restart"):
 		restart_level()	
 		return
 	#print(GameManager.isFalling)
-	player_speed_lable.text = "player speed:" + str(player.velocity.x)
 	
 	if GameManager.isFalling:
 		var fallableblocksinscene = get_tree().get_nodes_in_group("fallableblocks")
@@ -89,7 +92,10 @@ func  _process(_delta):
 			if is_instance_valid(block):
 				block.remove_from_group('fallingblocks')
 			break
-		
+	
+	# particles x gravity
+	bg_particeles.gravity.x = player.velocity.x
+	
 			
 func start_falling():
 	GameManager.isFalling = true
@@ -100,11 +106,19 @@ func stop_falling():
 func _on_player_player_moved():
 	if not GameManager.isFalling and not GameManager.level_end: #true
 		start_game_play()
-		
+
+func _on_player_player_die():
+	print("player die from something")
+	GameManager.level_end = true # only making true here
+	stop_falling()
+	await get_tree().create_timer(1.5).timeout	
+	_on_kill_zone_gameover()
+	
+
+
 func _on_end_block_player_reach_end():
 	print("player reached end signal")
-	GameManager.level_end = true #only making true here
-	stop_falling()
+	GameManager.level_end = true # only making true here
 	await get_tree().create_timer(1.5).timeout
 	start_end_transition()
 
@@ -131,5 +145,6 @@ func start_end_transition():
 		print("Scene dosen't load because of 'is_inside_tree' function")
 	
 
-#region
+
+
 

@@ -3,12 +3,11 @@ extends CharacterBody2D
 #signals
 signal playerMoved
 signal playerOnFallableBlock
+signal player_die
 var player_speed = GameManager.PLAYER_SPEED
-var jump_force = GameManager.PLAYER_JUMP_VELOCITY
 
 var alive:bool = true
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var ray_cast_m = $RayCastM
 @onready var ray_cast_l = $RayCastL
@@ -42,6 +41,12 @@ func _process(_delta):
 func gameover():
 	pass
 
+func playerDieFromPowerUp():
+	velocity.x = 0
+	alive = false
+	animated_sprite.play("die")
+	player_die.emit()
+	
 func player_on_jumper(_dir):
 	velocity.y =  GameManager.jumper_force
 
@@ -53,38 +58,42 @@ func _physics_process(delta):
 			
 		
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += GameManager.player_gravity * delta
 		for ray_cast in raycasts:
 			ray_cast.target_position.y = 75
 		
+			
 		
-	
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_force
+	if alive:
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = GameManager.PLAYER_JUMP_VELOCITY
+			
+		# Get the input direction and handle the movement/deceleration.
+		var direction = Input.get_axis("left", "right")
 		
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("left", "right")
-	
-	#animations
-	if is_on_floor():
-		if direction != 0 and not GameManager.level_end:
-			animated_sprite.play("run")
+		#animations
+		#animetion will only player if the player is alive
+		if is_on_floor():
+			if direction != 0 and not GameManager.level_end:
+				animated_sprite.play("run")
+			else:
+				animated_sprite.play("idel")
 		else:
-			animated_sprite.play("idel")
-	else:
-		animated_sprite.play("jump")
-		
-	if direction > 0:
-		animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
-		
-	if direction and not GameManager.level_end:
-		playerMoved.emit()
-		velocity.x = direction * player_speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, player_speed)
+			if velocity.y > 0 :
+				animated_sprite.play("falling")
+			if velocity.y < 0:
+				animated_sprite.play("jump")
+			
+		if direction > 0:
+			animated_sprite.flip_h = false
+		elif direction < 0:
+			animated_sprite.flip_h = true
+			
+		if direction and not GameManager.level_end:
+			playerMoved.emit()
+			velocity.x = direction * player_speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, player_speed)
 
 	move_and_slide()

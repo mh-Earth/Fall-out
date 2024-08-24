@@ -7,9 +7,12 @@
 size = Vector2(16, 25)
 
 [node name="Gound_block" instance=ExtResource("1_04v5n")]
+collision_mask = 33
 script = ExtResource("2_pkcu5")
-active_on_load = false
+active_on_load = true
 platfrom = false
+fallable = false
+speed = 20
 
 [node name="Timer" parent="." index="3"]
 wait_time = 1.0

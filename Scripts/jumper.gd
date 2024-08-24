@@ -5,7 +5,6 @@ var is_fallable = true
 @onready var player = %player
 @onready var ray_cast = $RayCast
 
-signal playerOnJumper
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var dir = Vector2.ZERO
 #var name:String = 'jumper'
@@ -18,7 +17,7 @@ func _physics_process(delta):
 
 func rotation_to_direction():
    # Get the rotation of the node (in radians)
-	var rotation_angle = rotation
+	# var rotation_angle = rotation
 
 	# Convert the rotation to a directional vector
 	var direction = Vector2(cos(rotation_degrees), sin(rotation_degrees))
@@ -27,7 +26,7 @@ func rotation_to_direction():
 	return direction
 
 func _on_jump_trigger_area_body_entered(_body):
-	#playerOnJumper.emit()
+
 	animation_player.play("on")
 	if animation_player.animation_started:
 		

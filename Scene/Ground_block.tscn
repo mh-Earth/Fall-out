@@ -1,18 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://5gmeytaabech"]
+[gd_scene load_steps=7 format=3 uid="uid://5gmeytaabech"]
 
 [ext_resource type="Script" path="res://Scripts/ground_block.gd" id="1_wl6vb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttihq"]
 size = Vector2(16, 16)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y8s8j"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
 [sub_resource type="Gradient" id="Gradient_jvfxl"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_248qe"]
 gradient = SubResource("Gradient_jvfxl")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y8s8j"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="Environment" id="Environment_5yw1x"]
+background_mode = 3
+glow_enabled = true
 
 [node name="Gound_block" type="RigidBody2D"]
 modulate = Color(0, 1, 1, 1)
@@ -28,10 +32,8 @@ script = ExtResource("1_wl6vb")
 shape = SubResource("RectangleShape2D_ttihq")
 metadata/_edit_lock_ = true
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_y8s8j")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 45.946, 46.487, 1)
 light_mask = 0
 texture_filter = 1
 texture = SubResource("GradientTexture1D_248qe")
@@ -39,8 +41,14 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 metadata/_edit_lock_ = true
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_y8s8j")
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5yw1x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

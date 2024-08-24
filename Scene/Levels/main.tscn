@@ -1,0 +1,351 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw4g7iiaw4lx1"]
+
+[ext_resource type="PackedScene" uid="uid://fhpjvv3q2p6s" path="res://Scene/Level.tscn" id="1_28gsg"]
+[ext_resource type="PackedScene" uid="uid://5gmeytaabech" path="res://Scene/Ground_block.tscn" id="2_5lsly"]
+[ext_resource type="PackedScene" uid="uid://cad3tiwf81iv2" path="res://Scene/jumper.tscn" id="3_4c5gl"]
+[ext_resource type="PackedScene" uid="uid://dwiu3nna20mxo" path="res://Scene/guidance_label.tscn" id="3_tehws"]
+[ext_resource type="PackedScene" uid="uid://bpp5prn0i7p1t" path="res://Scene/powerups/powerup.tscn" id="4_l1r0f"]
+[ext_resource type="PackedScene" uid="uid://bhjwmm165p8d4" path="res://Scene/moving_gound_block.tscn" id="5_2avpv"]
+[ext_resource type="PackedScene" uid="uid://bkdyj32ktq7uk" path="res://Scene/end_block.tscn" id="6_c71fe"]
+
+[node name="Level" instance=ExtResource("1_28gsg")]
+
+[node name="bg" parent="." index="0"]
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(5404, 108)
+scale = Vector2(46.8676, 2950)
+
+[node name="player" parent="." index="1"]
+position = Vector2(80, 61)
+
+[node name="Camera2D" parent="player" index="8"]
+position = Vector2(34, -38)
+
+[node name="Gound_block" parent="FallAbleBlocks" index="0" instance=ExtResource("2_5lsly")]
+
+[node name="Gound_block2" parent="FallAbleBlocks" index="1" instance=ExtResource("2_5lsly")]
+position = Vector2(16, 0)
+
+[node name="Gound_block3" parent="FallAbleBlocks" index="2" instance=ExtResource("2_5lsly")]
+position = Vector2(32, 0)
+
+[node name="Gound_block4" parent="FallAbleBlocks" index="3" instance=ExtResource("2_5lsly")]
+position = Vector2(48, 0)
+
+[node name="Gound_block5" parent="FallAbleBlocks" index="4" instance=ExtResource("2_5lsly")]
+position = Vector2(64, 0)
+
+[node name="Gound_block6" parent="FallAbleBlocks" index="5" instance=ExtResource("2_5lsly")]
+position = Vector2(80, 0)
+
+[node name="Gound_block7" parent="FallAbleBlocks" index="6" instance=ExtResource("2_5lsly")]
+position = Vector2(96, 0)
+
+[node name="Gound_block8" parent="FallAbleBlocks" index="7" instance=ExtResource("2_5lsly")]
+position = Vector2(112, 0)
+
+[node name="Gound_block9" parent="FallAbleBlocks" index="8" instance=ExtResource("2_5lsly")]
+position = Vector2(128, 0)
+
+[node name="Gound_block10" parent="FallAbleBlocks" index="9" instance=ExtResource("2_5lsly")]
+position = Vector2(144, 0)
+
+[node name="Gound_block11" parent="FallAbleBlocks" index="10" instance=ExtResource("2_5lsly")]
+position = Vector2(160, 0)
+
+[node name="Gound_block12" parent="FallAbleBlocks" index="11" instance=ExtResource("2_5lsly")]
+position = Vector2(176, 0)
+
+[node name="Gound_block13" parent="FallAbleBlocks" index="12" instance=ExtResource("2_5lsly")]
+position = Vector2(192, 0)
+
+[node name="Gound_block14" parent="FallAbleBlocks" index="13" instance=ExtResource("2_5lsly")]
+position = Vector2(208, 0)
+
+[node name="Gound_block15" parent="FallAbleBlocks" index="14" instance=ExtResource("2_5lsly")]
+position = Vector2(224, 0)
+
+[node name="Gound_block16" parent="FallAbleBlocks" index="15" instance=ExtResource("2_5lsly")]
+position = Vector2(240, 0)
+
+[node name="Gound_block33" parent="FallAbleBlocks" index="16" instance=ExtResource("2_5lsly")]
+position = Vector2(575, -188)
+
+[node name="Gound_block34" parent="FallAbleBlocks" index="17" instance=ExtResource("2_5lsly")]
+position = Vector2(627, -188)
+
+[node name="Gound_block35" parent="FallAbleBlocks" index="18" instance=ExtResource("2_5lsly")]
+position = Vector2(643, -188)
+
+[node name="Gound_block36" parent="FallAbleBlocks" index="19" instance=ExtResource("2_5lsly")]
+position = Vector2(659, -188)
+
+[node name="Gound_block37" parent="FallAbleBlocks" index="20" instance=ExtResource("2_5lsly")]
+position = Vector2(675, -188)
+
+[node name="Gound_block38" parent="FallAbleBlocks" index="21" instance=ExtResource("2_5lsly")]
+position = Vector2(691, -188)
+
+[node name="Gound_block39" parent="FallAbleBlocks" index="22" instance=ExtResource("2_5lsly")]
+position = Vector2(707, -188)
+
+[node name="Gound_block40" parent="FallAbleBlocks" index="23" instance=ExtResource("2_5lsly")]
+position = Vector2(723, -188)
+
+[node name="Gound_block41" parent="FallAbleBlocks" index="24" instance=ExtResource("2_5lsly")]
+position = Vector2(739, -188)
+
+[node name="Gound_block42" parent="FallAbleBlocks" index="25" instance=ExtResource("2_5lsly")]
+position = Vector2(755, -188)
+
+[node name="Gound_block43" parent="FallAbleBlocks" index="26" instance=ExtResource("2_5lsly")]
+position = Vector2(771, -188)
+
+[node name="Gound_block44" parent="FallAbleBlocks" index="27" instance=ExtResource("2_5lsly")]
+position = Vector2(787, -188)
+
+[node name="Gound_block45" parent="FallAbleBlocks" index="28" instance=ExtResource("2_5lsly")]
+position = Vector2(803, -188)
+
+[node name="Gound_block46" parent="FallAbleBlocks" index="29" instance=ExtResource("2_5lsly")]
+position = Vector2(819, -188)
+
+[node name="Gound_block47" parent="FallAbleBlocks" index="30" instance=ExtResource("2_5lsly")]
+position = Vector2(835, -188)
+
+[node name="Gound_block48" parent="FallAbleBlocks" index="31" instance=ExtResource("2_5lsly")]
+position = Vector2(851, -188)
+
+[node name="Gound_block58" parent="FallAbleBlocks" index="32" instance=ExtResource("2_5lsly")]
+position = Vector2(1096, 0)
+
+[node name="Gound_block59" parent="FallAbleBlocks" index="33" instance=ExtResource("2_5lsly")]
+position = Vector2(1112, 0)
+
+[node name="Gound_block60" parent="FallAbleBlocks" index="34" instance=ExtResource("2_5lsly")]
+position = Vector2(1128, 0)
+
+[node name="Gound_block61" parent="FallAbleBlocks" index="35" instance=ExtResource("2_5lsly")]
+position = Vector2(1144, 0)
+
+[node name="Gound_block62" parent="FallAbleBlocks" index="36" instance=ExtResource("2_5lsly")]
+position = Vector2(1160, 0)
+
+[node name="Gound_block63" parent="FallAbleBlocks" index="37" instance=ExtResource("2_5lsly")]
+position = Vector2(1202, 0)
+
+[node name="Gound_block64" parent="FallAbleBlocks" index="38" instance=ExtResource("2_5lsly")]
+position = Vector2(1218, 0)
+
+[node name="Gound_block65" parent="FallAbleBlocks" index="39" instance=ExtResource("2_5lsly")]
+position = Vector2(1234, 0)
+
+[node name="Gound_block66" parent="FallAbleBlocks" index="40" instance=ExtResource("2_5lsly")]
+position = Vector2(1250, 0)
+
+[node name="Gound_block67" parent="FallAbleBlocks" index="41" instance=ExtResource("2_5lsly")]
+position = Vector2(1266, 0)
+
+[node name="Gound_block68" parent="FallAbleBlocks" index="42" instance=ExtResource("2_5lsly")]
+position = Vector2(1282, 0)
+
+[node name="Gound_block69" parent="FallAbleBlocks" index="43" instance=ExtResource("2_5lsly")]
+position = Vector2(1298, 0)
+
+[node name="Gound_block70" parent="FallAbleBlocks" index="44" instance=ExtResource("2_5lsly")]
+position = Vector2(1314, 0)
+
+[node name="Gound_block71" parent="FallAbleBlocks" index="45" instance=ExtResource("2_5lsly")]
+position = Vector2(1330, 0)
+
+[node name="Gound_block72" parent="FallAbleBlocks" index="46" instance=ExtResource("2_5lsly")]
+position = Vector2(1346, 0)
+
+[node name="Gound_block73" parent="FallAbleBlocks" index="47" instance=ExtResource("2_5lsly")]
+position = Vector2(2408, 0)
+
+[node name="Gound_block49" parent="FallAbleBlocks" index="48" instance=ExtResource("2_5lsly")]
+position = Vector2(576, -314)
+
+[node name="Gound_block51" parent="FallAbleBlocks" index="49" instance=ExtResource("2_5lsly")]
+position = Vector2(628, -314)
+
+[node name="Gound_block52" parent="FallAbleBlocks" index="50" instance=ExtResource("2_5lsly")]
+position = Vector2(644, -314)
+
+[node name="Gound_block53" parent="FallAbleBlocks" index="51" instance=ExtResource("2_5lsly")]
+position = Vector2(660, -314)
+
+[node name="Gound_block54" parent="FallAbleBlocks" index="52" instance=ExtResource("2_5lsly")]
+position = Vector2(676, -314)
+
+[node name="Gound_block55" parent="FallAbleBlocks" index="53" instance=ExtResource("2_5lsly")]
+position = Vector2(692, -314)
+
+[node name="Gound_block56" parent="FallAbleBlocks" index="54" instance=ExtResource("2_5lsly")]
+position = Vector2(708, -314)
+
+[node name="Gound_block57" parent="FallAbleBlocks" index="55" instance=ExtResource("2_5lsly")]
+position = Vector2(724, -314)
+
+[node name="Gound_block17" parent="FallAbleBlocks" index="56" instance=ExtResource("2_5lsly")]
+position = Vector2(308, -93)
+
+[node name="Gound_block18" parent="FallAbleBlocks" index="57" instance=ExtResource("2_5lsly")]
+position = Vector2(324, -93)
+
+[node name="Gound_block19" parent="FallAbleBlocks" index="58" instance=ExtResource("2_5lsly")]
+position = Vector2(340, -93)
+
+[node name="Gound_block20" parent="FallAbleBlocks" index="59" instance=ExtResource("2_5lsly")]
+position = Vector2(356, -93)
+
+[node name="Gound_block21" parent="FallAbleBlocks" index="60" instance=ExtResource("2_5lsly")]
+position = Vector2(372, -93)
+
+[node name="Gound_block22" parent="FallAbleBlocks" index="61" instance=ExtResource("2_5lsly")]
+position = Vector2(388, -93)
+
+[node name="Gound_block23" parent="FallAbleBlocks" index="62" instance=ExtResource("2_5lsly")]
+position = Vector2(404, -93)
+
+[node name="Gound_block24" parent="FallAbleBlocks" index="63" instance=ExtResource("2_5lsly")]
+position = Vector2(420, -93)
+
+[node name="Gound_block25" parent="FallAbleBlocks" index="64" instance=ExtResource("2_5lsly")]
+position = Vector2(436, -93)
+
+[node name="Gound_block26" parent="FallAbleBlocks" index="65" instance=ExtResource("2_5lsly")]
+position = Vector2(452, -93)
+
+[node name="Gound_block27" parent="FallAbleBlocks" index="66" instance=ExtResource("2_5lsly")]
+position = Vector2(468, -93)
+
+[node name="Gound_block28" parent="FallAbleBlocks" index="67" instance=ExtResource("2_5lsly")]
+position = Vector2(484, -93)
+
+[node name="Gound_block29" parent="FallAbleBlocks" index="68" instance=ExtResource("2_5lsly")]
+position = Vector2(500, -93)
+
+[node name="Gound_block30" parent="FallAbleBlocks" index="69" instance=ExtResource("2_5lsly")]
+position = Vector2(516, -93)
+
+[node name="Gound_block31" parent="FallAbleBlocks" index="70" instance=ExtResource("2_5lsly")]
+position = Vector2(532, -93)
+
+[node name="Gound_block32" parent="FallAbleBlocks" index="71" instance=ExtResource("2_5lsly")]
+position = Vector2(548, -93)
+
+[node name="Gound_block50" parent="FallAbleBlocks" index="72" instance=ExtResource("2_5lsly")]
+position = Vector2(600, -93)
+
+[node name="kill zone" parent="." index="4"]
+position = Vector2(0, 632)
+
+[node name="TextureProgressBar" parent="UI" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="progress_value" parent="UI" index="1"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D" type="Node2D" parent="dialogues" index="0"]
+position = Vector2(-95, 65)
+scale = Vector2(0.05, 0.05)
+
+[node name="guidanceLabel" parent="dialogues/Node2D" index="0" instance=ExtResource("3_tehws")]
+offset_left = -940.0
+offset_top = -2620.0
+offset_right = 3767.0
+offset_bottom = -823.0
+text = "He who has a why to live
+ can bear almost any how 
+
+Friedrich Nietzsche"
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" parent="dialogues/Node2D/guidanceLabel" index="0"]
+position = Vector2(7880, 2300)
+scale = Vector2(-14.2422, 24.8301)
+
+[node name="CollisionShape2D" parent="dialogues/Node2D/guidanceLabel/Area2D" index="0"]
+position = Vector2(4.28553e-05, 0)
+
+[node name="jumper" parent="." index="10" instance=ExtResource("3_4c5gl")]
+position = Vector2(312, 68)
+
+[node name="powerUp2" parent="." index="11" instance=ExtResource("4_l1r0f")]
+position = Vector2(396, -8)
+powertype = "speeddown"
+
+[node name="jumper2" parent="." index="12" instance=ExtResource("3_4c5gl")]
+position = Vector2(618, -12)
+
+[node name="powerUp7" parent="." index="13" instance=ExtResource("4_l1r0f")]
+position = Vector2(676, -214)
+powertype = "levetation"
+duration = 2.0
+levetation_strength = 150
+
+[node name="Gound_block" parent="." index="14" instance=ExtResource("5_2avpv")]
+position = Vector2(333, 100)
+platfrom = true
+speed = 45
+
+[node name="jumper3" parent="." index="15" instance=ExtResource("3_4c5gl")]
+position = Vector2(848, -112)
+
+[node name="powerUp4" parent="." index="16" instance=ExtResource("4_l1r0f")]
+position = Vector2(120, 80)
+
+[node name="end_block" parent="." index="17" instance=ExtResource("6_c71fe")]
+position = Vector2(2496, 100)
+
+[node name="powerUp5" parent="." index="18" instance=ExtResource("4_l1r0f")]
+position = Vector2(1264, -20)
+
+[node name="powerUp8" parent="." index="19" instance=ExtResource("4_l1r0f")]
+position = Vector2(1168, 83)
+
+[node name="powerUp6" parent="." index="20" instance=ExtResource("4_l1r0f")]
+position = Vector2(1386, 83)
+
+[node name="jumper4" parent="." index="21" instance=ExtResource("3_4c5gl")]
+position = Vector2(1232, 72)
+
+[node name="Gound_block2" parent="." index="22" instance=ExtResource("5_2avpv")]
+position = Vector2(1457, 100)
+active_on_load = false
+platfrom = true
+speed = 100
+
+[node name="powerUp3" parent="." index="23" instance=ExtResource("4_l1r0f")]
+position = Vector2(1614, 75)
+
+[node name="powerUp9" parent="." index="24" instance=ExtResource("4_l1r0f")]
+position = Vector2(1715, 75)
+
+[node name="powerUp10" parent="." index="25" instance=ExtResource("4_l1r0f")]
+position = Vector2(1819, 75)
+powertype = "speeddown"
+
+[node name="powerUp11" parent="." index="26" instance=ExtResource("4_l1r0f")]
+position = Vector2(1920, 75)
+powertype = "none"
+
+[node name="powerUp12" parent="." index="27" instance=ExtResource("4_l1r0f")]
+position = Vector2(2061, 26)
+powertype = "levetation"
+
+[node name="powerUp13" parent="." index="28" instance=ExtResource("4_l1r0f")]
+position = Vector2(2162, 75)
+powertype = "none"
+
+[node name="powerUp14" parent="." index="29" instance=ExtResource("4_l1r0f")]
+position = Vector2(2266, 75)
+powertype = "speedup"
+
+[node name="powerUp15" parent="." index="30" instance=ExtResource("4_l1r0f")]
+position = Vector2(2367, 75)
+
+[editable path="dialogues/Node2D/guidanceLabel"]
